@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mailblast v.0.0 | Indraco</title>
+    <link rel="icon" href="assets/mail.svg" type="image/svg+xml">
+    <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="mailblast.css">
+  </head>
+  <body>
+    <div class="header">
+      <object style="float:left; margin-left:20px; margin-top:10px;" width="20px" height="20px" data="assets/mail.svg" type="image/svg+xml"></object>
+      <div class="header_appname">
+        Indraco Mailblast
+      </div>
+      <div class="header_appname" style="float:right;">
+        [Prototype ver]
+      </div>
+    </div>
+
+    <div class="dashboard_header">
+      <div class="dashboard_header_title">
+        Control Panel
+      </div>
+      <div class="dashboard_header_webselect">
+        <select id="websiteactive" onchange='getWebData()'>
+          <option value="" selected>--</option>
+          <option value="Supresso ID">Supresso ID</option>
+          <option value="Supresso SG">Supresso SG</option>
+          <option value="Pandangarden">Pandangarden</option>
+          <option value="Indracostore">Indracostore</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="dashboard_navigation_container" id="navigationcontainer" style="opacity:0; visibility:hidden; transform:translateY(-50px);">
+      <div class="dashboard_navigation">
+        <div class="dashboard_navigation_title">
+          Set Ready to Blast
+        </div>
+        <div class="dashboard_navigation_list">
+          <button style="background-color:#395B64;" onclick='setGroup("Self")'>Self</button>
+          <button style="background-color:#495C83;" onclick='setGroup("Internals")'>Internals</button>
+          <button style="background-color:#513252;" onclick='setGroup("Directors")'>Directors</button>
+          <button style="background-color:#7A4069;" onclick='setGroup("Owners")'>Owners</button>
+          <button style="background-color:#9EB23B;" onclick='setGroup("Members")'>Members</button>
+        </div>
+      </div>
+      <div class="dashboard_navigation" style="background-color:rgba(139, 0, 0, 0.1);">
+        <div class="dashboard_navigation_title" style="text-align:right;">
+          Unset Ready to Blast
+        </div>
+        <div class="dashboard_navigation_list" style="text-align:right;">
+          <button style="background-color:#94B49F; color:black;" onclick='unsetGroup("Self")'>Self</button>
+          <button style="background-color:#7A86B6; color:black;" onclick='unsetGroup("Internals")'>Internals</button>
+          <button style="background-color:#7A4069; color:black;" onclick='unsetGroup("Directors")'>Directors</button>
+          <button style="background-color:#CA4E79; color:black;" onclick='unsetGroup("Owners")'>Owners</button>
+          <button style="background-color:#D4F6CC; color:black;" onclick='unsetGroup("Members")'>Members</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard" id="dashboard" style="opacity:0; visibility:hidden; transform:translateY(-50px);">
+      <div class="dashboard_title">
+        <div class="dashboard_title_da">
+          Ready To Blast List
+        </div>
+        <button onclick='showFormAdd()'>+</button>
+      </div>
+      <table id="datafetch">
+        <tr>
+          <th style="background-color: rgba(255,255,255,.5);"></th>
+          <th>Email</th>
+          <th>Status</th>
+          <th style="background-color: rgba(255,255,255,.5); width:30px;"></th>
+        </tr>
+        <tr>
+          <td colspan=4>Loading...</td>
+        </tr>
+      </table>
+      <div class="blastbtn">
+        <button onclick='openSure()'><b>Blast Now</b></button>
+      </div>
+    </div>
+
+    <div class="msg" id="msgcontainer" style="opacity:0; visibility:hidden;">
+      <div class="msg_core" id="msgcore" style="transform:translateY(-50px);">
+        <div class="msg_core_logo" id="msglogo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </div>
+        <div class="msg_core_text" id="msgcontent">
+          Sorry! There was an error!
+        </div>
+        <div class="msg_core_button">
+          <button onclick='closeMsg()'>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="msg" id="msgcontainersure" style="opacity:0; visibility:hidden;">
+      <div class="msg_core" id="msgcoresure" style="transform:translateY(-50px);">
+        <div class="msg_core_logo" id="msglogo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+          </svg>
+        </div>
+        <div class="msg_core_text" id="msgcontent">
+          Are you sure to proceed?
+        </div>
+        <div class="msg_core_button">
+          <button onclick='closeSure()' style="background-color:darkred">Close</button>
+          <button onclick='beginBlast()' style="background-color:darkgreen">Proceed</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form" id="formadd" style="opacity:0; visibility:hidden;">
+      <div class="form_core" id="formaddcore" style="transform:translateY(-50px);">
+        <div class="form_core_header">
+          <div class="form_core_header_title">
+            Standby Data List
+          </div>
+          <div class="form_core_header_button">
+            <button onclick='closeFormAdd()'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="form_core_tablecontainer">
+          <div class="form_core_table_search">
+            <input class="table_search_input" id="searchval"></input>
+            <button class="table_search_button" onclick='getDestination()'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+          </div>
+          <table id="tableaddfetch">
+            <tr>
+              <td colspan=3>Loading...</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="assets/jquery.js" type="text/javascript"></script>
+  <script src="mailblast.js" type="text/javascript"></script>
+</html>
