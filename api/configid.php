@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "supresso_newsupressoid";
+$database = "supresso_mailblast";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
