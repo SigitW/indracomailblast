@@ -396,16 +396,22 @@ function beginBlast(){
   }
 }
 
+
 // js for index.html for main menu operation
 $('.btn-menu-config').on("click", function(){
-  location.replace("config.html");
+  window.location.href = "config.html";
 });
 
 $('.btn-menu-content').on("click", function(){
-  location.replace("content.html");
+  window.location.href = "content.html";
 });
 
 $('.btn-menu-blast').on("click", function(){
-  location.replace("mailblast.html");
+  window.location.href = "mailblast.html";
 });
+
+$('.app_name').on("click", function(){
+  window.location.href = "/indracomailblast";
+})
+
 // 

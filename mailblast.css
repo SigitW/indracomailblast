@@ -410,6 +410,12 @@ body{
   }
 }
 
-.btn-menu:hover{
-  background-color: #2C3333;
+/* style for main page index.html */
+btn-menu:hover{
+  background-color: rebeccapurple;
+}
+/* end */
+
+.app_name{
+  cursor: pointer;
 }
