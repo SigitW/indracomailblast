@@ -409,3 +409,7 @@ body{
     top:275px;
   }
 }
+
+.btn-menu:hover{
+  background-color: #2C3333;
+}

@@ -395,3 +395,17 @@ function beginBlast(){
     }
   }
 }
+
+// js for index.html for main menu operation
+$('.btn-menu-config').on("click", function(){
+  location.replace("config.html");
+});
+
+$('.btn-menu-content').on("click", function(){
+  location.replace("content.html");
+});
+
+$('.btn-menu-blast').on("click", function(){
+  location.replace("mailblast.html");
+});
+// 

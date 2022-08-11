@@ -18,13 +18,30 @@
       </div>
     </div>
 
-    <div class="dashboard" id="dashboard" style="margin-top: -150px;height: max-content;background-color: tr;">
-      <div class="panel-menu" style="width:100%;display: inline-block;height: 150px;">
-        <button class="btn-menu btn-menu-content" style="width: 50%;padding:0px;height: inherit;background-color: cadetblue;border: solid 0px;font-size: 18px;cursor: pointer;float: left;">Content Management</button>
-        <button class="btn-menu btn-menu-blast" style="width: 50%;padding:0px;height: inherit;background-color: #4d9599;border: solid 0px;font-size: 18px;cursor: pointer;float: right;">Begin Email Blast</button>
+    <div class="dashboard_navigation_container" id="navigationcontainer" style="opacity:0; visibility:hidden; transform:translateY(-50px);">
+      
+    </div>
+
+    <div class="dashboard" id="dashboard" style="opacity:0; visibility:hidden; transform:translateY(-50px);">
+      <div class="dashboard_title">
+        <div class="dashboard_title_da">
+          Ready To Blast List
+        </div>
+        <button onclick='showFormAdd()'>+</button>
       </div>
-      <div class="panel-menu" style="width:100%;">
-        <button class="btn-menu btn-menu-config" style="width: 100%;height:100px;background-color: #418387;border: solid 0px;font-size: 18px;cursor: pointer;">Config</button>
+      <table id="datafetch">
+        <tr>
+          <th style="background-color: rgba(255,255,255,.5);"></th>
+          <th>Email</th>
+          <th>Status</th>
+          <th style="background-color: rgba(255,255,255,.5); width:30px;"></th>
+        </tr>
+        <tr>
+          <td colspan=4>Loading...</td>
+        </tr>
+      </table>
+      <div class="blastbtn">
+        <button onclick='openSure()'><b>Blast Now</b></button>
       </div>
     </div>
 
