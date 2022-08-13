@@ -201,10 +201,10 @@ if($do == "getdata"){
         include "configid.php";
         if($inputCode == "Self"){
           $sql = "UPDATE mailblastid SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
         } else if($inputCode == "Internals"){
           $sql = "UPDATE mailblastid SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'ivansantoso.priv@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
@@ -212,14 +212,14 @@ if($do == "getdata"){
           $sql = $sql."OR email = 'sgi.webdev@gmail.com' ";
         } else if($inputCode == "Directors"){
           $sql = "UPDATE mailblastid SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
           $sql = $sql."OR email = 'pristine@indraco.com' ";
         } else if($inputCode == "Owners"){
           $sql = "UPDATE mailblastid SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'agus@indraco.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
@@ -245,24 +245,24 @@ if($do == "getdata"){
         include "configsg.php";
         if($inputCode == "Self"){
           $sql = "UPDATE mailblast SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
         } else if($inputCode == "Internals"){
           $sql = "UPDATE mailblast SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'yoggi.supresso@gmail.com' ";
           $sql = $sql."OR email = 'sgi.webdev@gmail.com' ";
         } else if($inputCode == "Directors"){
           $sql = "UPDATE mailblast SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
           $sql = $sql."OR email = 'pristine@indraco.com' ";
         } else if($inputCode == "Owners"){
           $sql = "UPDATE mailblast SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'agus@indraco.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
@@ -284,10 +284,10 @@ if($do == "getdata"){
         include "configid.php";
         if($inputCode == "Self"){
           $sql = "UPDATE mailblastpandan SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
         } else if($inputCode == "Internals"){
           $sql = "UPDATE mailblastpandan SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'ivansantoso.priv@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
@@ -295,14 +295,14 @@ if($do == "getdata"){
           $sql = $sql."OR email = 'sgi.webdev@gmail.com' ";
         } else if($inputCode == "Directors"){
           $sql = "UPDATE mailblastpandan SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
           $sql = $sql."OR email = 'pristine@indraco.com' ";
         } else if($inputCode == "Owners"){
           $sql = "UPDATE mailblastpandan SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'agus@indraco.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
@@ -328,23 +328,23 @@ if($do == "getdata"){
         include "configid.php";
         if($inputCode == "Self"){
           $sql = "UPDATE mailblastindrstore SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
         } else if($inputCode == "Internals"){
           $sql = "UPDATE mailblastindrstore SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'sgi.webdev@indraco.com' ";
           $sql = $sql."OR email = 'yoggi.supresso@gmail.com' ";
         } else if($inputCode == "Directors"){
           $sql = "UPDATE mailblastindrstore SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
         } else if($inputCode == "Owners"){
           $sql = "UPDATE mailblastindrstore SET status = 'Ready' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email = 'sigitwahyu05@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
         } else if($inputCode == "Members"){
           $sql = "UPDATE mailblastindrstore SET status = 'Ready' WHERE subrek = 'subscribed' ";
         } else {
@@ -439,7 +439,7 @@ if($do == "getdata"){
           $sql = $sql."OR email = 'sgi.webdev@gmail.com' ";
         } else if($inputCode == "Directors"){
           $sql = "UPDATE mailblast SET status = 'Standby' WHERE ";
-          $sql = $sql."email = 'aldy.indraco@gmail.com' ";
+          $sql = $sql."email = 'aldy.indraco@gmail.com' OR email='sigitwahyu05@gmail.com' ";
           $sql = $sql."OR email = 'as.sgiworld@gmail.com' ";
           $sql = $sql."OR email = 'design@indraco.com' ";
           $sql = $sql."OR email = 'marco@indraco.com' ";
