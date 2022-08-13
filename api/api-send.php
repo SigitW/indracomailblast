@@ -109,7 +109,7 @@ if($do == "send"){
                 $mail->AltBody = 'Sorry, cannot show this page. Your email client is not supported a HTML format';
                 $mail->send();
                 $conn->query("UPDATE mailblastindrstore SET status = 'Standby' WHERE id = '".$memberID."' ");
-              } catch(e){
+              } catch(Exception $e){
                 $pesan = "Failed sending email - ".$memberEmail;
               }
               $status = "Success";

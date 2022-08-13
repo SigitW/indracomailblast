@@ -104,6 +104,7 @@ function doSend(){
         id : targetid
       },
       success: function(result){
+        console.log(result);
         var resultParse = JSON.parse(result);
         var resultStatus = resultParse.status;
         var resultMessage = resultParse.message;
