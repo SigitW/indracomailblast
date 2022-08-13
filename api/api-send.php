@@ -54,35 +54,35 @@ if($do == "send"){
               if($lastMemberID == "1" || $lastMemberID == "6"){
                 $relayHost = "mail.indracostore.com";
                 $relayUname = "no-reply01@indracostore.com";
-                $relayPassword = "(.=)reLaY01s-inrStore_+";
+                $relayPassword = "TheRelayOfIndracoStore01";
                 $relayPort = "465";
                 $relaySenderAs = "no-reply@indracostore.com";
                 $relaySenderName = "INDRACO Store";
               } else if($lastMemberID == "2" || $lastMemberID == "7"){
                 $relayHost = "mail.indracostore.com";
                 $relayUname = "no-reply02@indracostore.com";
-                $relayPassword = "(.=)reLaY02s-inrStore_+";
+                $relayPassword = "TheRelayOfIndracoStore02";
                 $relayPort = "465";
                 $relaySenderAs = "no-reply@indracostore.com";
                 $relaySenderName = "INDRACO Store";
               } else if($lastMemberID == "3" || $lastMemberID == "8"){
                 $relayHost = "mail.indracostore.com";
                 $relayUname = "no-reply03@indracostore.com";
-                $relayPassword = "(.=)reLaY03s-inrStore_+";
+                $relayPassword = "TheRelayOfIndracoStore03";
                 $relayPort = "465";
                 $relaySenderAs = "no-reply@indracostore.com";
                 $relaySenderName = "INDRACO Store";
               } else if($lastMemberID == "4" || $lastMemberID == "9"){
                 $relayHost = "mail.indracostore.com";
                 $relayUname = "no-reply04@indracostore.com";
-                $relayPassword = "(.=)reLaY04s-inrStore_+";
+                $relayPassword = "TheRelayOfIndracoStore04";
                 $relayPort = "465";
                 $relaySenderAs = "no-reply@indracostore.com";
                 $relaySenderName = "INDRACO Store";
               } else {
                 $relayHost = "mail.indracostore.com";
                 $relayUname = "no-reply05@indracostore.com";
-                $relayPassword = "(.=)reLaY05s-inrStore_+";
+                $relayPassword = "TheRelayOfIndracoStore05";
                 $relayPort = "465";
                 $relaySenderAs = "no-reply@indracostore.com";
                 $relaySenderName = "INDRACO Store";
