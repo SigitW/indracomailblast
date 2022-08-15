@@ -2,9 +2,8 @@
 $reportWebsource = "indracostore.com";
 $reportBlastTime = "2022-07-19 17:00 WIB";
 
-$contentSubject = "'[TEST]' Sedang Merencanakan Travelling?";
-$contentHTML = '
-<!DOCTYPE html>
+$contentSubject = "'[TEST]' Merdeka Bangsanya, Merdeka Diskonnya!";
+$contentHTML = '<!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" style="margin: 0; padding: 0;">
 <head>
 	<meta charset="utf-8">
@@ -19,7 +18,7 @@ $contentHTML = '
 		<tbody>
 			<tr style="display: none; max-height: 0; overflow: hidden;"><td>
 				<module name="preheader" label="Preheader"></module>
-				<editable name="preheader">Kurang lengkap kalau tanpa ini!</editable>
+				<editable name="preheader">17% OFF! Semua produk terbaik di INDRACO Store!</editable>
 				&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
 				&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
 				&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
@@ -99,54 +98,44 @@ $contentHTML = '
 					<tbody>
 
 						<tr><td>
-							<img src="https://indracostore.com/newsletter/img/logo-indraco.png" width="250" height="30" style="vertical-align: sub;">
+							<img src="https://indracostore.com/newsletter/img/logo-indracostore.png" width="250" height="30" style="vertical-align: sub;">
 						</td></tr>
 						<tr><td style="padding-top: 40px; padding-bottom: 0;">
-							<img src="https://indracostore.com/newsletter/130822/img/baner.gif" width="100%" height="auto" style="max-width: 600px; vertical-align: sub;">
+							<img src="https://indracostore.com/newsletter/150822/img/baner.gif" width="100%" height="auto" style="max-width: 600px; vertical-align: sub;">
 						</td></tr>
 						<tr><td style="padding-top: 60px; padding-bottom: 0;">
 							<p style="font-family: sans-serif; font-size: 2.61em; color: #58595b; line-height: 1.3; margin-top: 0; margin:0;">
-								<strong>Traveling?</strong>
+								<strong>Meriahkan kemerdekaan</strong>
 							</p>
-							<p style="font-family: sans-serif; font-size: 2.50em; color: #58595b; line-height: 1.3; margin-top: 0; margin:0;">
-								Tetap bersama produk INDRACO
-							</p>
-
 						</td></tr>
 						<tr><td style="padding-bottom:0; padding-top: 40px;">
 							<p style="font-family: sans-serif; font-size: 1em; color: #58595b; line-height: 1.5; margin-top: 0;">
-								Kemasan yang compact dan mudah dibawa kemana saja ini adalah solusi yang pas untuk kamu yang ribet dengan banyaknya barang bawaan!
+								Karena kami punya diskon 17% untukmu! Berlaku untuk setiap pembelian<br> produk-produk di INDRACO Store varian apa saja. Periode promo: 15 - 21 Agustus 2022.<br>Tunggu apa lagi? 
 							</p>
-							<!-- <p style="font-family: sans-serif; font-size: 1em; color: #58595b; line-height: 1.5; margin-top: 0;">
-								Berlaku untuk setiap pembelian produk Indraco Store rasa dan varian apa saja. Promo diskon langsung berlaku pada saat checkout. Tunggu apa lagi? Periode promo: 15 - 21 Agustus 2022.
-							</p>
-							<p style="font-family: sans-serif; font-size: 1em; color: #58595b; line-height: 1.5; margin-top: 0;">
-								Belum punya akun Indraco Store? Daftar sekarang dan dapatkan keuntungan lebih lengkapnya. Checkout sekarang!
-							</p> -->
 						</td></tr>
 						<tr><td style="padding-top: 40px; padding-bottom: 60px;">
 							<table border="0" cellspacing="0" cellpadding="40" width="100%" bgcolor="#F2F2F2">
 								<tbody style="height: 100%;">
 									<tr style="height: 100%;">
 										<td width="45%" style="padding-right:0px;">
-											<a href="https://www.indracostore.com/produk/detailProduk/25" target="_blank">
-												<img src="https://indracostore.com/newsletter/130822/img/promo1.png" width="100%" height="auto" style="vertical-align: sub;">
+											<a href="https://www.indracostore.com/produk/detailProduk/66" target="_blank">
+												<img src="https://indracostore.com/newsletter/150822/img/promo-kiri.png" width="100%" height="auto" style="vertical-align: sub;">
 											</a>
 										</td>
 										<td width="10%" style="padding-left: 5px; padding-right: 5px; text-align: center;">
 											<img src="https://indracostore.com/newsletter/010822/img/gariss.png" width="8%" height="auto" style="vertical-align: sub;">
 										</td>
 										<td width="45%" height="100%" style="padding-left: 20px; padding-top: 0; padding-bottom: 0;">
-											<h2 style="font-family: sans-serif; font-size: 1.5em; color: #6d6e71; line-height: 1.3; margin-top: 0; margin-bottom: 0px;">
+											<h2 style="font-family: sans-serif; font-size: 1.2em; color: #6d6e71; line-height: 1.3; margin-top: 0; margin-bottom: 6px;">
 												<strong>
-													Uang Emas<br>
-													Kopi Special
+													Beli 1 Bag<br>
+													Gratis 1 Tumbler
 												</strong>
 											</h2>
-											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 35px;"><small>Renceng (10 sachets x 10g)</small>
+											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 25px;">Berlaku untuk UCAFÉ Special 140g dan selama persedian masih ada
 											</p>
 											<div style="width: 152px;">
-												<a href="https://www.indracostore.com/produk/detailProduk/25" target="_blank" style="text-decoration: none; font-family: sans-serif; font-size: .875em; text-align: center; white-space: nowrap; display: block; vertical-align: middle; color: #58595b; border: solid 1px #58595b; padding: .5em .75em; min-width: 152px; box-sizing: border-box; line-height: 1;">
+												<a href="https://www.indracostore.com/produk/detailProduk/66" target="_blank" style="text-decoration: none; font-family: sans-serif; font-size: .875em; text-align: center; white-space: nowrap; display: block; vertical-align: middle; color: #58595b; border: solid 1px #58595b; padding: .5em .75em; min-width: 152px; box-sizing: border-box; line-height: 1;">
 													Shop Now
 												</a>
 											</div>
@@ -160,16 +149,16 @@ $contentHTML = '
 								<tbody style="height: 100%;">
 									<tr style="height: 100%;">
 										<td width="45%" height="100%" style="padding-top: 0; padding-right: 20px; padding-bottom: 0;">
-											<h2 style="font-family: sans-serif; font-size: 1.5em; color: #6d6e71; line-height: 1.3; margin-top: 0; margin-bottom: 0px;">
+											<h2 style="font-family: sans-serif; font-size: 1.2em; color: #6d6e71; line-height: 1.3; margin-top: 0; margin-bottom: 6px;">
 												<strong>
-													Tugu Buaya<br>
-													Kopi Special
-												</strong>
+													Beli 1 Bungkus<br>
+													Gratis 1 Tumbler
+												</strong>		
 											</h2>
-											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 35px;"><small>Renceng (10 sachets x 7g)</small>
+											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 25px;">Berlaku untuk UCAFÉ Special 150g dan selama persedian masih ada
 											</p>
 											<div style="width: 152px;">
-												<a href="https://www.indracostore.com/produk/detailProduk/12" target="_blank" style="text-decoration: none; font-family: sans-serif; font-size: .875em; text-align: center; white-space: nowrap; display: block; vertical-align: middle; color: #58595b; border: solid 1px #58595b; padding: .5em .75em; min-width: 152px; box-sizing: border-box; line-height: 1;">
+												<a href="https://www.indracostore.com/produk/detailProduk/67" target="_blank" style="text-decoration: none; font-family: sans-serif; font-size: .875em; text-align: center; white-space: nowrap; display: block; vertical-align: middle; color: #58595b; border: solid 1px #58595b; padding: .5em .75em; min-width: 152px; box-sizing: border-box; line-height: 1;">
 													Shop Now
 												</a>
 											</div>
@@ -178,51 +167,15 @@ $contentHTML = '
 											<img src="https://indracostore.com/newsletter/010822/img/gariss.png" width="8%" height="auto" style="vertical-align: sub;">
 										</td>
 										<td width="45%" style="padding-right:40px; padding-left:0px;">
-											<a href="https://www.indracostore.com/produk/detailProduk/12" target="_blank">
-												<img src="https://indracostore.com/newsletter/130822/img/promo2.png" width="100%" height="auto" style="vertical-align: sub;">
+											<a href="https://www.indracostore.com/produk/detailProduk/67" target="_blank">
+												<img src="https://indracostore.com/newsletter/150822/img/promo-kanan.png" width="100%" height="auto" style="vertical-align: sub;">
 											</a>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-						</td></tr>
-						<tr><td style="padding-top:0px; padding-bottom: 60px;">
-							<table border="0" cellspacing="0" cellpadding="40" width="100%" bgcolor="#F2F2F2">
-								<tbody style="height: 100%;">
-									<tr style="height: 100%;">
-										<td width="45%" style="padding-right:0px;">
-											<a href="https://www.indracostore.com/produk/detailProduk/66" target="_blank">
-												<img src="https://indracostore.com/newsletter/130822/img/promo3.png" width="100%" height="auto" style="vertical-align: sub;">
-											</a>
-										</td>
-										<td width="10%" style="padding-left: 5px; padding-right: 5px; text-align: center;">
-											<img src="https://indracostore.com/newsletter/010822/img/gariss.png" width="8%" height="auto" style="vertical-align: sub;">
-										</td>
-										<td width="45%" height="100%" style="padding-left: 20px; padding-top: 0; padding-bottom: 0;">
-											<h2 style="font-family: sans-serif; font-size: 1.2em; color: #6d6e71; line-height: 1.3; margin-top: 0; margin-bottom: 0px;">
-												<strong>
-													Beli 1 Bag<br>
-													Gratis 1 Tumbler
-												</strong>
-											</h2>
-											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 10px;">
-												<small>Bag (20 sachets x 7g)
-												</small>
-																							</p>
-											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 20px;">
-												<small>*Berlaku untuk UCAFÉ Pure Coffee Special P20 dan selama persediaan masih ada</small>
-											</p>
-											<div style="width: 152px;">
-												<a href="https://www.indracostore.com/produk/detailProduk/66" target="_blank" style="text-decoration: none; font-family: sans-serif; font-size: .875em; text-align: center; white-space: nowrap; display: block; vertical-align: middle; color: #58595b; border: solid 1px #58595b; padding: .5em .75em; min-width: 152px; box-sizing: border-box; line-height: 1;">
-													Shop Now
-												</a>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</td></tr>
-						<!-- <tr><td style="padding-top: 0; padding-bottom: 60px;">
+						</td></tr>		
+						<tr><td style="padding-top: 0; padding-bottom: 60px;">
 							<table border="0" cellspacing="0" cellpadding="40" width="100%" bgcolor="#fff" style="border: solid 2px #f2f2f2;">
 								<tbody style="height: 100%;">
 									<tr style="height: 100%;">
@@ -236,7 +189,7 @@ $contentHTML = '
 												</strong>
 											</h2>
 											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 0px;">
-												Diskon MERDEKA 17% | Semua produk Tanpa minimum order
+												Diskon 17% | Semua produk<br>Tanpa minimum order
 											</p>
 											<p style="font-family: sans-serif; font-size: 1em; color: #6d6e71; line-height: 1.5; margin: 0; margin-bottom: 0px;">
 												<small>15 - 21 Agustus 2022</small>
@@ -245,7 +198,7 @@ $contentHTML = '
 									</tr>
 								</tbody>
 							</table>
-						</td></tr>	 -->
+						</td></tr>		
 					</tbody>
 				</table>
 			</td></tr><!-- end konten -->
@@ -254,7 +207,7 @@ $contentHTML = '
 				<table width="720" cellpadding="40" cellspacing="0" border="0" align="center" style="width: 720px!important; padding: 20px; padding-left: 0px; padding-right: 0px;"><tbody>
 					<tr>
 						<td width="60%" valign="bottom" style="padding-top: 0; padding-bottom: 20px;">
-							<img src="https://indracostore.com/newsletter/img/logo-indraco.png" width="250" height="30" style="vertical-align: sub;" alt="">
+							<img src="https://indracostore.com/newsletter/img/logo-grayy.png" width="140" height="26" style="vertical-align: sub;" alt="">
 						</td>
 						<td width="40%" valign="bottom" style="padding-top: 0; padding-bottom: 20px; padding-left: 19px;">
 							<p style="font-family: sans-serif; font-size: .75em; color: black; line-height: 1.5; margin: 0; vertical-align: sub;">
@@ -284,7 +237,7 @@ $contentHTML = '
 												<tr>
 													<td style="padding-top: 0; padding-bottom: 0;">
 														<p style="font-family: sans-serif; font-size: .75em; color: #939598; line-height: 1.5; margin: 0;">
-															<a href="https://indracostore.com/newsletter/130822/130822.html" target="_blank" style="text-decoration: none; font-family: sans-serif; color: #939598;">View Web Version</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+															<a href="https://indracostore.com/newsletter/150822/150822.html" target="_blank" style="text-decoration: none; font-family: sans-serif; color: #939598;">View Web Version</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 															<a href="https://www.indracostore.com/unsubscribe" target="_blank" style="text-decoration: none; font-family: sans-serif; color: #939598;">Unsubscribe</a>
 														</p>
 													</td>

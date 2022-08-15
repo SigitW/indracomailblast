@@ -1,0 +1,43 @@
+-- 2022-08-14
+
+CREATE TABLE m_brand(
+	id int(6) unsigned auto_increment primary key,
+	name varchar(100),
+	slug varchar(100),
+	domain varchar(100),
+	aseet_namespace varchar(100),
+	created_at timestamp,
+	created_who varchar(100),
+	updated_at timestamp,
+	updated_who varchar(100),
+	flag varchar(1)
+);
+
+CREATE TABLE t_asset(
+	id int unsigned auto_increment primary key,
+	content_id int unsigned,
+	name varchar(255),
+	created_at timestamp,
+	created_who varchar(100),
+	updated_at timestamp,
+	updated_who varchar(100),
+	flag varchar(1)
+);
+
+CREATE TABLE t_content(
+	id int unsigned auto_increment primary key,
+	brancd_id int unsigned,
+	body_content text,
+	date_namespace varchar(8),
+	time_namespace varchar(8),
+	created_at timestamp,
+	created_who varchar(100),
+	updated_at timestamp,
+	updated_who varchar(100),
+	flag varchar(1)
+);
+
+--
+
+
+
