@@ -93,7 +93,7 @@
                 <input type="file" name="" id="" style="margin-bottom:7px;">
                 <button class="btn btn-sm btn-primary" style="width:100%;"><i class="bi bi-arrow-bar-up"></i> Upload</button>
                 <hr>
-                <div style="width:100%;height:300px;max-height:100%;background-color:lightgrey;border-radius:5px;overflow-y:scroll;">
+                <div style="width:100%;height:500px;background-color:lightgrey;border-radius:5px;overflow-y:scroll;padding:5px;" id="asset-panel">
 
                 </div>
             </div>
@@ -115,11 +115,7 @@
   </div>
 
   </body>
-  <script src="assets/jquery.js" type="text/javascript"></script>
-  <script src="content.js" type="text/javascript"></script>
-
   <script>
-
     var textArea = document.getElementById("content-editor");
     var editor = CodeMirror.fromTextArea(textArea, {
       lineNumbers: true,
@@ -128,10 +124,11 @@
       matchBrackets: true,
       theme:"ambiance"
     });
-
-    editor.setSize(null, 500);
-
-
+    editor.setSize(null, 800);
+  </script>
+  <script src="assets/jquery.js" type="text/javascript"></script>
+  <script src="content.js" type="text/javascript"></script>
+  <script>
     // get slug in url
     const slug = '<?= $_GET["slug"] ?>';
     toDetail(slug);

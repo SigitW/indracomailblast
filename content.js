@@ -89,6 +89,38 @@ function loadContent(slug){
 
 function showEdit(id){
     $("#modal-edit").modal('show');
+    $.ajax({
+        url: apidir + 'api-content.php?do=load-content-by-id',
+        type: 'POST',
+        headers: {
+        },
+        data : {
+            "id" : id
+        },
+        success: function(result){
+            const res = JSON.parse(result);
+            console.log(res.content);
+            
+            // set to codemirror
+            editor.getDoc().setValue(res.content);
+    
+            let str = "";
+        
+            if (res.asset.length > 0){
+                $.each(res.asset, function(i,item){
+                    str += '<div style="border:solid 1px grey;border-radius:5px;height:100px;margin-bottom:7px;text-align:center;cursor:pointer;"' +
+                    'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'path copied\');">'+
+                            '<img src="http://'+item+'" style="height:100%;margin:auto 0px">'+
+                            '<div/>';
+                });
+            }
+
+            $("#asset-panel").html(str);
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
 }
 
 $(".btn-close-edit").on('click', function(){

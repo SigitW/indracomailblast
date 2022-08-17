@@ -1,9 +1,10 @@
 <?php
 
-$arrdata = array();
 
 function getBrand(){
     include '../api/configid.php';
+    $arrdata = array();
+
     $data = $conn->query("SELECT id, name, slug, domain, aseet_namespace  FROM m_brand mb WHERE flag = 'Y'");
     
     $availdata = $data->num_rows > 0;
@@ -47,6 +48,7 @@ function getBrandDetail($slug=""){
 
 function getContentBySlug($slug=""){
     include '../api/configid.php';
+    $arrdata = array();
     
     $sql = "SELECT tc.id, date_namespace , time_namespace, tc.updated_at, tc.updated_who FROM t_content tc 
     INNER JOIN m_brand mb on mb.id  = tc.brancd_id 
@@ -71,5 +73,56 @@ function getContentBySlug($slug=""){
         return $arrdata;
     }
     return "";
+}
+
+function getContentBodyById($id=""){
+    include '../api/configid.php';
+    $data = $conn->query("SELECT body_content FROM t_content WHERE id = '".$id."'");
+    
+    $availdata = $data->num_rows > 0;
+
+    if($availdata){
+        while($p = $data->fetch_assoc()){
+            return $p['body_content'];
+        }
+    }
+    return "";
+}
+
+function getAssetByContentId($contentid = ""){
+    include '../api/configid.php';
+    $arrdata = array();
+    
+    $sql = "SELECT 
+    mb.domain, 
+    mb.aseet_namespace, 
+    tc.date_namespace,
+    tc.time_namespace,
+    ta.name
+    FROM t_asset ta INNER JOIN
+    t_content tc ON tc.brancd_id = ta.id INNER JOIN
+    m_brand mb ON mb.id = tc.brancd_id 
+    WHERE ta.flag = 'Y'
+    AND tc.id = '".$contentid."'
+    ";
+
+    $data = $conn->query($sql);
+    
+    $availdata = $data->num_rows > 0;
+
+    if($availdata){
+        $n = 0;
+        while($p = $data->fetch_assoc()){
+            $obj = new stdClass;
+            $obj->domain = $p['domain'];
+            $obj->asset_namespace = $p['aseet_namespace'];
+            $obj->date_namespace = $p['date_namespace'];
+            $obj->time_namespace = $p['time_namespace'];
+            $obj->name = $p['name'];
+            $arrdata[$n] = $obj;
+            $n++;
+        }
+    }
+    return $arrdata;
 }
 ?>
