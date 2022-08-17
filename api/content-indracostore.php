@@ -2,7 +2,7 @@
 $reportWebsource = "indracostore.com";
 $reportBlastTime = "2022-07-19 17:00 WIB";
 
-$contentSubject = "'[TEST]' Merdeka Bangsanya, Merdeka Diskonnya!";
+$contentSubject = "Merdeka Bangsanya, Merdeka Diskonnya!";
 $contentHTML = '<!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" style="margin: 0; padding: 0;">
 <head>
