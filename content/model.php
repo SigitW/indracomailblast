@@ -125,4 +125,51 @@ function getAssetByContentId($contentid = ""){
     }
     return $arrdata;
 }
+
+function getPathContent($id){
+
+    include '../api/configid.php';
+
+    $sql = "SELECT 
+    mb.domain,
+    mb.aseet_namespace,
+    tc.date_namespace, 
+    tc.time_namespace
+    FROM t_content tc INNER JOIN
+    m_brand mb ON mb.id = tc.brancd_id 
+    WHERE tc.id = '".$id."' ";
+    
+    if ($conn->query($sql) === TRUE) {
+        $availdata = $data->num_rows > 0;
+        if ($availdata){
+            while($p = $data->fetch_assoc()){
+                $obj = new stdClass;
+                $obj->domain = $p['domain'];
+                $obj->asset_namespace = $p['aseet_namespace'];
+                $obj->date_namespace = $p['date_namespace'];
+                $obj->time_namespace = $p['time_namespace'];
+                return $obj;
+            }
+        }
+    } 
+    return "";
+}
+
+function updateContent($contentid = "", $bodycontent = "", $updatedwho){
+    include '../api/configid.php';
+
+    try {
+        
+        $sql = "UPDATE t_content SET body_content = '".$bodycontent."' WHERE id = '".$contentid."' ";
+
+        if ($conn->query($sql) === TRUE) {
+            return "success";
+        } else {
+            return "Error updating record: " . $conn->error;
+        }
+
+    } catch (\Throwable $th) {
+        return $th;
+    }
+}
 ?>

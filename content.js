@@ -43,7 +43,7 @@ function toDetail(slug){
         },
         success: function(result){
           const res = JSON.parse(result);
-          console.log(res);
+        //   console.log(res);
           let str = "";
           str += "<h3 style='color:lightgrey;'>"+res.name+"</h3>";
           str += "<h5 style='color:darkgrey;'>"+res.domain+"</h3>";
@@ -89,6 +89,9 @@ function loadContent(slug){
 
 function showEdit(id){
     $("#modal-edit").modal('show');
+    editor.getDoc().setValue("");
+    $("#asset-panel").html("")
+    $("#id-content").val(id);
     $.ajax({
         url: apidir + 'api-content.php?do=load-content-by-id',
         type: 'POST',
@@ -99,22 +102,18 @@ function showEdit(id){
         },
         success: function(result){
             const res = JSON.parse(result);
-            console.log(res.content);
             
-            // set to codemirror
             editor.getDoc().setValue(res.content);
-    
+
             let str = "";
-        
             if (res.asset.length > 0){
                 $.each(res.asset, function(i,item){
                     str += '<div style="border:solid 1px grey;border-radius:5px;height:100px;margin-bottom:7px;text-align:center;cursor:pointer;"' +
-                    'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'path copied\');">'+
+                    'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'Path Copied!\');">'+
                             '<img src="http://'+item+'" style="height:100%;margin:auto 0px">'+
                             '<div/>';
                 });
             }
-
             $("#asset-panel").html(str);
         },
         error: function(error){
@@ -122,6 +121,34 @@ function showEdit(id){
         }
     });
 }
+
+$("#btn-save-content").on('click', function(){
+
+    const contentbody = editor.getDoc().getValue();
+    const id = $("#id-content").val();
+    
+    $.ajax({
+        url: apidir + 'api-content.php?do=update-content',
+        type: 'POST',
+        headers: {
+        },
+        data : {
+            "id" : id,
+            "content" : contentbody
+        },
+        success: function(result){
+            console.log(result);
+            if (result == "success"){
+                alert("Saved !");
+            } else {
+                alert(result);
+            }
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
+})
 
 $(".btn-close-edit").on('click', function(){
     const modalEdit = $("#modal-edit");
@@ -135,3 +162,4 @@ $(".btn-close-edit").on('click', function(){
         return false;
     }
 })
+

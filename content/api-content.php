@@ -39,7 +39,8 @@ if ($do == "load-content")
     }
 }
 
-if ($do == "load-content-by-id"){
+if ($do == "load-content-by-id")
+{
     $id = $_POST['id'];
 
     $datacontent = getContentBodyById($id);
@@ -63,4 +64,17 @@ if ($do == "load-content-by-id"){
 
     $jsondata = json_encode($result);
     hasSuccess($jsondata);
+}
+
+if ($do == "update-content")
+{
+    $content = $_POST['content'];
+    $id      = $_POST['id'];   
+    $res     = updateContent($id, $content, '');
+
+    
+
+    $myfile = fopen("index.html", $content);
+    echo $res;
+    exit();
 }

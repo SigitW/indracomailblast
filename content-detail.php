@@ -85,6 +85,7 @@
           <button type="button" class="btn-close btn-close-edit" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="color:black">
+        <input type="hidden" id="id-content"/>
           <div class="row">
             <div class="col-md-4 col-xs-12" style="margin-bottom:20px;">
               <button class="btn btn-sm btn-danger" style="width:100%;"><i class="bi bi-box-arrow-up-right"></i> Preview</button>
@@ -108,7 +109,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success"><i class="bi bi-check-lg"></i> Save</button>
+          <button type="button" class="btn btn-success" id="btn-save-content"><i class="bi bi-check-lg"></i> Save</button>
         </div>
       </div>
     </div>
