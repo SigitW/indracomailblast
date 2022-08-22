@@ -138,20 +138,20 @@ function getPathContent($id){
     FROM t_content tc INNER JOIN
     m_brand mb ON mb.id = tc.brancd_id 
     WHERE tc.id = '".$id."' ";
-    
-    if ($conn->query($sql) === TRUE) {
-        $availdata = $data->num_rows > 0;
-        if ($availdata){
-            while($p = $data->fetch_assoc()){
-                $obj = new stdClass;
-                $obj->domain = $p['domain'];
-                $obj->asset_namespace = $p['aseet_namespace'];
-                $obj->date_namespace = $p['date_namespace'];
-                $obj->time_namespace = $p['time_namespace'];
-                return $obj;
-            }
+
+    $data = $conn->query($sql);
+
+    $availdata = $data->num_rows > 0;
+    if ($availdata){
+        while($p = $data->fetch_assoc()){
+            $obj = new stdClass;
+            $obj->domain = $p['domain'];
+            $obj->asset_namespace = $p['aseet_namespace'];
+            $obj->date_namespace = $p['date_namespace'];
+            $obj->time_namespace = $p['time_namespace'];
+            return $obj;
         }
-    } 
+    }
     return "";
 }
 

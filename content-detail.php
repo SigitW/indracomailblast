@@ -88,7 +88,7 @@
         <input type="hidden" id="id-content"/>
           <div class="row">
             <div class="col-md-4 col-xs-12" style="margin-bottom:20px;">
-              <button class="btn btn-sm btn-danger" style="width:100%;"><i class="bi bi-box-arrow-up-right"></i> Preview</button>
+              <button class="btn btn-sm btn-danger" style="width:100%;" id="btn-preview"><i class="bi bi-box-arrow-up-right"></i> Preview</button>
               <hr style="color:black">
               <div style="margin-bottom:7px;">Upload File :</div>
                 <input type="file" name="" id="" style="margin-bottom:7px;">

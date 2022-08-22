@@ -1,4 +1,5 @@
 const apidir = "content/";
+let pathPreview = "";
 
 function searchBrand(){
     // console.log("access");
@@ -108,12 +109,14 @@ function showEdit(id){
             let str = "";
             if (res.asset.length > 0){
                 $.each(res.asset, function(i,item){
-                    str += '<div style="border:solid 1px grey;border-radius:5px;height:100px;margin-bottom:7px;text-align:center;cursor:pointer;"' +
+                    str += '<div style="border-radius:5px;height:100px;margin-bottom:7px;text-align:center;cursor:pointer;background-color:grey;"' +
                     'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'Path Copied!\');">'+
                             '<img src="http://'+item+'" style="height:100%;margin:auto 0px">'+
                             '<div/>';
                 });
             }
+
+            pathPreview = res.path;
             $("#asset-panel").html(str);
         },
         error: function(error){
@@ -150,16 +153,25 @@ $("#btn-save-content").on('click', function(){
     });
 })
 
-$(".btn-close-edit").on('click', function(){
-    const modalEdit = $("#modal-edit");
-    if(confirm("Do you want to quit edit ?")){
-        if(confirm("This data maybe not saved yet, are you sure ?")){
-            modalEdit.modal("hide");
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
+$("#btn-preview").on('click', function(){
+    window.open(pathPreview);
 })
+
+
+$(".btn-close-edit").on('click', function(){
+    
+    const modalEdit = $("#modal-edit");
+    modalEdit.modal("hide");
+
+    // if(confirm("Do you want to quit edit ?")){
+    //     if(confirm("This data maybe not saved yet, are you sure ?")){
+    //         modalEdit.modal("hide");
+    //     } else {
+    //         return false;
+    //     }
+    // } else {
+    //     return false;
+    // }
+})
+
 
