@@ -45,7 +45,7 @@
       <br/>
       <h3><a href="content.html" style="text-decoration:none;color:white">Content Management</a> / Details</h3>
       <div style="width:100%;text-align:right">
-        <button class="btn btn-sm btn-light"><i class="bi bi-plus-lg"></i> Add Content</button>
+        <button class="btn btn-sm btn-light" id="btn-create"><i class="bi bi-plus-lg"></i> Add Content</button>
       </div>
       <br/>
 
@@ -90,21 +90,18 @@
             <div class="col-md-4 col-xs-12" style="margin-bottom:20px;">
               <button class="btn btn-sm btn-danger" style="width:100%;" id="btn-preview"><i class="bi bi-box-arrow-up-right"></i> Preview</button>
               <hr style="color:black">
-              <div style="margin-bottom:7px;">Upload File :</div>
-                <input type="file" name="" id="" style="margin-bottom:7px;">
-                <button class="btn btn-sm btn-primary" style="width:100%;"><i class="bi bi-arrow-bar-up"></i> Upload</button>
+              <form action="#" enctype="multipart/form-data">
+                <div style="margin-bottom:7px;">Upload File :</div>
+                <input type="file" name="file" id="files" style="margin-bottom:7px;" multiple>
+                <a href="#" class="btn btn-sm btn-primary" style="width:100%;" id="btn-upload"><i class="bi bi-arrow-bar-up"></i> Upload</a>
                 <hr>
                 <div style="width:100%;height:500px;background-color:lightgrey;border-radius:5px;overflow-y:scroll;padding:5px;" id="asset-panel">
-
                 </div>
+              </form>
             </div>
             <div class="col-md-8 col-xs-12">
-              <form action="">
                 <textarea name="" id="content-editor" style="width:100%;">
                 </textarea>
-              </form>
-         
-             
             </div>
           </div>
         </div>

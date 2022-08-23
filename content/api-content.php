@@ -83,7 +83,13 @@ if ($do == "update-content")
 
     if ($res == "success"){
 
-        $path = "/opt/lampp/htdocs/pandangarden.com/newsletterv2/220815/1100/";
+        $pathcontent = getPathContent($id);
+        //path content concate;
+        $p = $pathcontent;
+        $path = "/" . $p->domain . "/" . 
+        $p->asset_namespace . "/" . $p->date_namespace . "/" . 
+        $p->time_namespace . "/";
+        // end
 
         $postdata = http_build_query(
             array(
@@ -102,15 +108,36 @@ if ($do == "update-content")
             )
         );
         $context = stream_context_create($opts);
-        $result = file_get_contents('http://localhost/mbcontentservices/api.php', false, $context);
+        $result = file_get_contents('http://localhost/mbcontentservices/api/api-content.php', false, $context);
         echo $result;
     }
+}
 
-    // $path = "/opt/lampp/htdocs/pandangarden.com/newsletterv2/220815/1100/";
-    // $myfile = fopen($path . "index.html", "w");
-    // fwrite($myfile, $content);
-    // fclose($myfile);
-    // chmod($path . "index.html", 0777); 
-    // echo $res;
-    // exit();
+if ($do == "upload-asset"){
+    $id     = $_POST['id'];
+    $data   = $_POST['strimg'];
+    $type   = $_POST['type'];
+
+    // echo $data;
+
+    $postdata = http_build_query(
+        array(
+            'token' => '1',
+            'id' => '1',
+            'content_id' => $id,
+            'type' => $type,
+            'strimg' => $data,
+            'do' => 'upload-asset'
+        )
+    );
+    $opts = array('http' =>
+        array(
+            'method' => 'POST',
+            'header' => 'Content-type: application/x-www-form-urlencoded',
+            'content' => $postdata
+        )
+    );
+    $context = stream_context_create($opts);
+    $result = file_get_contents('http://localhost/mbcontentservices/api/api-content.php', false, $context);
+    echo $result;
 }

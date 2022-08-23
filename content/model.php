@@ -51,7 +51,7 @@ function getContentBySlug($slug=""){
     $arrdata = array();
     
     $sql = "SELECT tc.id, date_namespace , time_namespace, tc.updated_at, tc.updated_who FROM t_content tc 
-    INNER JOIN m_brand mb on mb.id  = tc.brancd_id 
+    INNER JOIN m_brand mb on mb.id  = tc.brand_id 
     WHERE mb.slug  = '".$slug."' and tc.flag ='Y' ";
 
     $data = $conn->query($sql);
@@ -100,8 +100,8 @@ function getAssetByContentId($contentid = ""){
     tc.time_namespace,
     ta.name
     FROM t_asset ta INNER JOIN
-    t_content tc ON tc.brancd_id = ta.id INNER JOIN
-    m_brand mb ON mb.id = tc.brancd_id 
+    t_content tc ON tc.id = ta.content_id INNER JOIN
+    m_brand mb ON mb.id = tc.brand_id  
     WHERE ta.flag = 'Y'
     AND tc.id = '".$contentid."'
     ";
@@ -136,7 +136,7 @@ function getPathContent($id){
     tc.date_namespace, 
     tc.time_namespace
     FROM t_content tc INNER JOIN
-    m_brand mb ON mb.id = tc.brancd_id 
+    m_brand mb ON mb.id = tc.brand_id 
     WHERE tc.id = '".$id."' ";
 
     $data = $conn->query($sql);

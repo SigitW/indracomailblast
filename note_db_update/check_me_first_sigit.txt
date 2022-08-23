@@ -36,7 +36,13 @@ CREATE TABLE t_content(
 	updated_who varchar(100),
 	flag varchar(1)
 );
+--
 
+-- 2022-08-23
+
+	ALTER TABLE t_content ADD COLUMN materi_name TEXT AFTER time_namespace;
+	ALTER TABLE t_content ADD COLUMN subject TEXT AFTER materi_name;
+	ALTER TABLE t_content CHANGE brancd_id brand_id int unsigned;
 --
 
 

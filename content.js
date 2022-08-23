@@ -93,6 +93,8 @@ function showEdit(id){
     editor.getDoc().setValue("");
     $("#asset-panel").html("")
     $("#id-content").val(id);
+    pathPreview = "";
+    
     $.ajax({
         url: apidir + 'api-content.php?do=load-content-by-id',
         type: 'POST',
@@ -109,12 +111,14 @@ function showEdit(id){
             let str = "";
             if (res.asset.length > 0){
                 $.each(res.asset, function(i,item){
-                    str += '<div style="border-radius:5px;height:100px;margin-bottom:7px;text-align:center;cursor:pointer;background-color:grey;"' +
+                    str += '<div style="border-radius:5px;height:100px;margin-top:10px;text-align:center;cursor:pointer;background-color:grey;"' +
                     'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'Path Copied!\');">'+
                             '<img src="http://'+item+'" style="height:100%;margin:auto 0px">'+
                             '<div/>';
                 });
             }
+
+            // console.log(res.asset);
 
             pathPreview = res.path;
             $("#asset-panel").html(str);
@@ -124,6 +128,10 @@ function showEdit(id){
         }
     });
 }
+
+$("#btn-create").on('click', function(){
+    $("#modal-create").modal('show');
+})
 
 $("#btn-save-content").on('click', function(){
 
@@ -140,12 +148,14 @@ $("#btn-save-content").on('click', function(){
             "content" : contentbody
         },
         success: function(result){
-            console.log(result);
-            if (result == "success"){
-                alert("Saved !");
-            } else {
-                alert(result);
-            }
+            const res = JSON.parse(result);
+            console.log(res);
+            alert(res.message);
+            // if (res.status == "success"){
+            //     alert("Saved !");
+            // } else {
+            //     alert(result);
+            // }
         },
         error: function(error){
             console.log(error);
@@ -156,6 +166,108 @@ $("#btn-save-content").on('click', function(){
 $("#btn-preview").on('click', function(){
     window.open(pathPreview);
 })
+
+let base64Files = '';
+$("#files").on('change', function(e){
+
+    // Get a reference to the file
+    const file = e.target.files[0];
+
+    // Encode the file using the FileReader API
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        // console.log(reader.result);
+        base64Files = reader.result;
+        // Logs data:<type>;base64,wL2dvYWwgbW9yZ...
+        
+    };
+    reader.readAsDataURL(file);
+})
+
+function getFileName(fullPath){
+    var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+    var filename = fullPath.substring(startIndex);
+    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        return filename = filename.substring(1);
+    }
+    return "";
+}
+
+function loadPanelAsset(){
+    const id  = $("#id-content").val();
+    $.ajax({
+        url: apidir + 'api-content.php?do=load-content-by-id',
+        type: 'POST',
+        headers: {
+        },
+        data : {
+            "id" : id
+        },
+        success: function(result){
+            const res = JSON.parse(result);
+        
+            let str = "";
+            if (res.asset.length > 0){
+                $.each(res.asset, function(i,item){
+                    str += '<div style="border-radius:5px;height:100px;margin-top:10px;text-align:center;cursor:pointer;background-color:grey;"' +
+                    'onclick="navigator.clipboard.writeText(\'http://'+item+'\');alert(\'Path Copied!\');">'+
+                            '<img src="http://'+item+'" style="height:100%;margin:auto 0px">'+
+                            '<div/>';
+                });
+            }
+            $("#asset-panel").html(str);
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
+}
+
+$("#btn-upload").on('click', function(){
+
+    const id            = $("#id-content").val();
+    const filePath      = $("#files").val();
+    const filename      = getFileName(filePath);
+    const type          = filename.split('.').pop();
+    const ltype         = type.toLowerCase();
+    const isValidType   = ltype == "png" || ltype == "jpg" || ltype == "gif";
+    
+    if (!isValidType){
+        alert(filename + ' - Not Valid Type');
+        return;
+    }
+
+    $.ajax({
+        url: apidir + 'api-content.php?do=upload-asset',
+        type: 'POST',
+        headers: {
+        },
+        data : {
+            "id" : id,
+            "strimg" : base64Files,
+            "type" : type
+        },
+        success: function(result){
+            const res = JSON.parse(result);
+            if (res.status == "success"){
+                loadPanelAsset();
+            }
+        },
+        error: function(error){
+            console.log(error);
+        }
+    });
+});
+
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
+
 
 
 $(".btn-close-edit").on('click', function(){
@@ -173,5 +285,7 @@ $(".btn-close-edit").on('click', function(){
     //     return false;
     // }
 })
+
+
 
 
